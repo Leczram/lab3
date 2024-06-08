@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Forum</title>
+</head>
+<body>
+    <h1>Forum</h1>
+    <a href="{{ url_for('new_thread') }}">Create New Thread</a>
+    <ul>
+        {% for thread in threads %}
+        <li><a href="{{ url_for('thread', thread_id=thread.id) }}">{{ thread.title }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+

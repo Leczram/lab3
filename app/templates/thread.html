@@ -1,0 +1,15 @@
+<h1>{{ thread.title }}</h1>
+<div>
+    <form method="post">
+        {{ form.hidden_tag() }}
+        {{ form.content }}
+        {{ form.submit }}
+    </form>
+</div>
+<ul>
+    {% for post in posts %}
+    <li>{{ post.content }} - {{ post.user.username }} at {{ post.timestamp.strftime('%Y-%m-%d %H:%M:%S') }}</li>
+    {% endfor %}
+</ul>
+<a href="{{ url_for('forum') }}">Back to Forum</a>
+

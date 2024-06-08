@@ -1,0 +1,7 @@
+<h1>User Management</h1>
+<ul>
+    {% for user in users %}
+    <li>{{ user.username }} - {{ user.email }} - Role: {{ user.role }}</li>
+    {% endfor %}
+</ul>
+
